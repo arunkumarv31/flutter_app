@@ -8,7 +8,6 @@ class MyApp extends StatelessWidget {
   //Stateless widgets are immutable, meaning that their properties can’t change—all values are final.
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
 
     return MaterialApp(
         title: 'Welcome to Flutter',
