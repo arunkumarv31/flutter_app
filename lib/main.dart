@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 /* 
    Implementing a stateful widget requires at least two classes: 
     1) a StatefulWidget class that creates an instance of 
