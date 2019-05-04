@@ -30,13 +30,13 @@ class MyApp extends StatelessWidget {
         but the State class persists over the lifetime of the widget.
 */
 
-/* Stateful widget */
+/* Stateful widget ( immutable ) */
 class RandomWords extends StatefulWidget {
   @override
   RandomWordsState createState() => RandomWordsState();
 }
 
-/* State class */
+/* State class (mutable) */
 class RandomWordsState extends State<RandomWords> {
 
   @override
