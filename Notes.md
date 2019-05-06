@@ -8,3 +8,4 @@
 * Build method expects at least one container widget.
 * _Why not everything stateful ?_
 * Whenever a tab is associated with a stateful widget it regenerates the widget everytime the tab is selected.
+* A stateless widget is not getting reloaded everytime when the tab is created. 
