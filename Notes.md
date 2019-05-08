@@ -9,3 +9,7 @@
 * _Why not everything stateful ?_
 * Whenever a tab is associated with a stateful widget it regenerates the widget everytime the tab is selected.
 * A stateless widget is not getting reloaded everytime when the tab is created. 
+* context - contains meta information about the app and the position where this widget is drawn. Eg: context contains Theme / Colors.
+* rule: a widget has to return another widget in the build method until we reach the root widget ships with flutter.
+* scaffold - creates a new page.
+* 
