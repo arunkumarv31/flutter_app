@@ -12,4 +12,4 @@
 * context - contains meta information about the app and the position where this widget is drawn. Eg: context contains Theme / Colors.
 * rule: a widget has to return another widget in the build method until we reach the root widget ships with flutter.
 * scaffold - creates a new page.
-* 
+* Lifecycle hooks are methods which will be executed for you by flutter
