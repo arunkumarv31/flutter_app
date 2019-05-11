@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
 // import 'officialex.dart';
 // import 'listex.dart';
 // import 'immutable.dart';
@@ -8,9 +10,12 @@ import 'package:flutter/material.dart';
 // import 'drawer.dart';
 import 'udemy/section2.dart';
 
-void main() => runApp(
-  MyApp()
-);
+void main(){
+  debugPaintSizeEnabled = true;
+  debugPaintBaselinesEnabled = true;
+  runApp(MyApp());
+}
+
 
 /* void main() => runApp(MaterialApp(
       home: MyApp(),

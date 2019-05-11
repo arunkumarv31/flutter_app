@@ -5,7 +5,7 @@ import 'products.dart';
 class ProductManager extends StatefulWidget {
   final String startingProduct;
 
-  ProductManager(this.startingProduct) {
+  ProductManager({this.startingProduct = 'Sweets Tester'}) {
     print('[ProductManager StatefulWidget] Constructor');
   }
 
@@ -32,6 +32,12 @@ class _ProductManagerState extends State<ProductManager> {
     super.didUpdateWidget(oldWidget);
   }
 
+  void _addProduct(String product) {
+    setState(() {
+      _products.add(product);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     print('[_ProductManagerState State] build()');
@@ -41,11 +47,10 @@ class _ProductManagerState extends State<ProductManager> {
           /* color: Colors.red, */
           margin: EdgeInsets.all(10.0),
           child: RaisedButton(
+            color: Theme.of(context).primaryColor,
             child: Text("Add Product"),
             onPressed: () {
-              setState(() {
-                _products.add('Advanced Food Tester');
-              });
+              _addProduct('Advanced Food Tester');
             },
           ),
         ),
