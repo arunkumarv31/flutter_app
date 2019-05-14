@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'products.dart';
 
 class ProductManager extends StatefulWidget {
-  final String startingProduct;
+  final Map<String, String> startingProduct;
 
   ProductManager({this.startingProduct}) {
     print('[ProductManager StatefulWidget] Constructor');
@@ -17,7 +17,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProductManagerState extends State<ProductManager> {
-  List<String> _products = [];
+  List<Map<String, String>> _products = [];
 
   @override
   void initState() {
@@ -35,9 +35,15 @@ class _ProductManagerState extends State<ProductManager> {
     super.didUpdateWidget(oldWidget);
   }
 
-  void _addProduct(String product) {
+  void _addProduct(Map<String, String> product) {
     setState(() {
       _products.add(product);
+    });
+  }
+
+  void _deleteProduct (int index ){
+    setState((){
+      _products.removeAt(index);
     });
   }
 
@@ -53,11 +59,11 @@ class _ProductManagerState extends State<ProductManager> {
             color: Theme.of(context).primaryColor,
             child: Text("Add Product"),
             onPressed: () {
-              _addProduct('Advanced Food Tester');
+              _addProduct({ 'title': 'Chocolate', 'image':'assets/food.jpg' });
             },
           ),
         ),
-        Expanded(child:Products(_products))
+        Expanded(child:Products(_products, deleteProduct:_deleteProduct))
       ],
     );
   }
