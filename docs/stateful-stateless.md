@@ -26,14 +26,14 @@ class DogApp extends StatelessWidget {
     }
 }
 ```
-Widgets are really just configurations for pieces of an app's UI.They are blueprints. So what are they configurations for ? Elements.An element is a widget that's been made real and mounted on screen. And it is the element tree that represents what is actually displaying on your device at any given moment. Each widget class has a corresponding element class & a method to create an instance. `StatelessWidget`, for example creates a stateless element.
+Widgets are really just configurations for pieces of an app's UI.They are blueprints. So what are they configurations for?. Elements. An element is a widget that's been made real and mounted on screen. And it is the element tree that represents what is actually displaying on your device at any given moment. Each widget class has a corresponding element class & a method to create an instance. `StatelessWidget`, for example creates a stateless element.
 ```dart
 //...
 @override
 StatelessElement createElement() => new StatelessElement(this);
 ```
 That `createElement` method is called when the Widget is mounted to the tree. Flutter asks the widget for an element and then pops that element into the element tree with a reference to the widget that created it. 
-**Flutter progresses through all the build methods, creating widgets, using them to make elements, and so on, until everything is built, mounted on screen, and ready to be laid out and rendered**
+Flutter progresses through all the build methods, creating widgets, using them to make elements, and so on, until everything is built, mounted on screen, and ready to be laid out and rendered.
 
 ## Stateful Widget
 A stateful widget is implemented by two classes. 
