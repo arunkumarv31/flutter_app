@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 // import 'mpa.dart';
 // import 'drawer.dart';
 // import 'udemy/section2.dart';
-// import 'june/one.dart';
-import 'random/tut_container.dart';
+import 'june/one.dart';
+// import 'random/tut_container.dart';
 
 void main() => runApp(MyApp());
   // debugPaintSizeEnabled = true;

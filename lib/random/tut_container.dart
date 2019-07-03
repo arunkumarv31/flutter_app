@@ -42,24 +42,41 @@ class _MyApp extends State<MyApp> with SingleTickerProviderStateMixin {
                   ),
               Form(
                   child: Theme(
-                    data: ThemeData(
-                      brightness: Brightness.dark,
-                      primarySwatch: Colors.teal
-                    ),
-                                      child: Column(
-                children: <Widget>[
-                    TextFormField(
-                      decoration: InputDecoration(hintText: 'Enter Email'),
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(hintText: 'Enter Password'),
-                      keyboardType: TextInputType.text,
-                      obscureText: true,
-                    ),
-                ],
-              ),
-                  ))
+                data: ThemeData(
+                    brightness: Brightness.dark,
+                    primarySwatch: Colors.teal,
+                    inputDecorationTheme: InputDecorationTheme(
+                        labelStyle:
+                            TextStyle(color: Colors.teal, fontSize: 20.0))),
+                child: Container(
+                  padding: const EdgeInsets.all(40.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Enter Email'),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      TextFormField(
+                        decoration:
+                            InputDecoration(labelText: 'Enter Password'),
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                      ),
+                      MaterialButton(
+                        color: Colors.teal,
+                        textColor: Colors.white,
+                        child: Icon(Icons.accessibility),//Text('Login'),
+                        onPressed: () => {},
+                        //splashColor: Colors.white,
+                      )
+                    ],
+                  ),
+                ),
+              ))
             ],
           )
         ],

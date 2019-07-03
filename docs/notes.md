@@ -77,3 +77,66 @@ class _MyAppState extends State<MyApp> {
   final List<String> _products = const [];
 - if a value can never be changed use const on the right side of the equal sign.
 if you just wanted to be sure that you will never be able to assign a new value to a property then use final in front of the property name
+- The ListView widget : for rendering lists, listview can't be used beneath another widget
+The below codes are in StatelessWidget's build()
+Column(
+      children: products
+          .map((element) => Card(
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('assets/food.jpg'),
+                    Text(element)
+                  ],
+                ),
+              ))
+          .toList(),
+          Same as 
+Listview(
+      children: products
+          .map((element) => Card(
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('assets/food.jpg'),
+                    Text(element)
+                  ],
+                ),
+              ))
+          .toList(),
+//------Better way to load only when it needs to be rendered-------
+ListView.builder(
+      itemBuilder: _buildProductItem,
+      itemCount: products.length,
+    );
+Widget _buildProductItem(BuildContext context, int index) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Image.asset('assets/food.jpg'),
+          Text(products[index])
+        ],
+      ),
+    );
+  }
+//----------------
+In the bove code return card only if products.length > 0 else return Center(child: Text('Nothing to show. Add some'))
+
+Navigation
+In previos eg one. Scaffold is the only pagethat loads
+-Navigator.push() Idea of pages in stacked way
+MaterialPageRoute -> for the animations
+
+List<Map<String, String>> -> array of objects
+Dart future is javascript promise
+
+push<bool> - push method will give us a future which will eventually results into a boolean value.
+
+-will pop scope - 
+
+-- flutter cataalogue
+https://github.com/X-Wei/flutter_catalog
+- stack based navigation
+- defaulttabcontroller, tabbar (usually put it on appbar for top), tabbarview works together
+- product create page do not return appbar, drawer, scaffold. just body.
+- Global registry is similar to angular router json - named routes
+
+
